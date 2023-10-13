@@ -19,44 +19,41 @@ class Welcome extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        width: double.infinity,
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        color: Colors.orange[500],
+        width: double.infinity,    // لعمل الكونتينر عرض علي حسب الشاشه
+        child: 
+        Column(    //  لترتيب العناصر باطول
+          mainAxisAlignment: MainAxisAlignment.center,  // لجعل المحتويات في النتصف علي محور الطول
+          crossAxisAlignment: CrossAxisAlignment.center,   // لجعل المحتويات في النتصف علي محور العرض
           children: [
             
-            Container(
-              margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
-              padding: EdgeInsets.fromLTRB(56, 80, 0, 0),
-              child: 
-              Text("Welcom" ,style: TextStyle(fontSize: 16,fontWeight: FontWeight.w900,color: Colors.white) ,),
-
-              width: 170,
-              height: 170,
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                 borderRadius: BorderRadiusDirectional.circular(200)
-                 
-              ),
-            ),
-           SizedBox(height: 200,),
-            ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, "/login");
+           
+           
+            ElevatedButton(        //  لعمل زر بداخلة كلمة
+            onPressed: () {    //  تنفيذ الامر عند الضغط
+              Navigator.pushNamed(context, "/login"); // امر الانتقال لصفحة
             },
-            style: ButtonStyle(
+            style: ButtonStyle(    // لعمل استايل للزر
               backgroundColor: MaterialStateProperty.all(Colors.purple),
-              padding: MaterialStateProperty.all(
-                  EdgeInsets.symmetric(horizontal: 110, vertical: 10)),
-              shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(66))),
-            ),
-            child: Text(
+              padding:  // لتحديد عرض وطول الزر   
+              MaterialStateProperty.all(
+              EdgeInsets.symmetric(
+              horizontal: 110,
+              vertical: 10)),
+
+              shape:    //  لعمل حواف مستديره للزر
+              MaterialStateProperty.all(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(66))),
+              ),
+
+            child: Text(   // للكتابة داخل الزر
               "log in",
               style: TextStyle(fontSize: 19, color: Colors.white),
             ),
           ),
-           SizedBox(height: 20,),
+
+
+           SizedBox(height: 20,),    // لعمل مسافة بين كل محتوي
            ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, "/singup");
