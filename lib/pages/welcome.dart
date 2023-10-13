@@ -11,6 +11,7 @@ class Welcome extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.purple,
         title: Text("welcome",style: TextStyle(
+          fontFamily: "font1",
           fontSize: 25,
           color: Colors.white,
           fontWeight: FontWeight.w900
@@ -48,7 +49,8 @@ class Welcome extends StatelessWidget {
 
             child: Text(   // للكتابة داخل الزر
               "log in",
-              style: TextStyle(fontSize: 19, color: Colors.white),
+              style: TextStyle(fontFamily: "font2",
+                fontSize: 19, color: Colors.white),
             ),
           ),
 
